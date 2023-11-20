@@ -36,6 +36,10 @@ dependencies {
     api(libs.robolectric.shadows)
     api(libs.turbine)
 
+    api(libs.androidx.compose.ui.test)
+    api(libs.hilt.android.testing)
+    debugApi(libs.androidx.compose.ui.testManifest)
+
     implementation(projects.core.common)
     implementation(projects.core.data)
     implementation(projects.core.designsystem)

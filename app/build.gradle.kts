@@ -33,6 +33,8 @@ android {
         versionCode = 8
         versionName = "0.1.2" // X.Y.Z; X = Major, Y = minor, Z = Patch level
 
+        testInstrumentationRunner = "com.google.samples.apps.nowinandroid.core.testing.NiaTestRunner"
+
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -97,11 +99,14 @@ dependencies {
 
     implementation(projects.sync.work)
 
+    androidTestImplementation(projects.core.testing)
     androidTestImplementation(projects.core.datastoreTest)
     androidTestImplementation(projects.core.dataTest)
     androidTestImplementation(projects.core.network)
+    androidTestImplementation(libs.androidx.navigation.testing)
     androidTestImplementation(libs.accompanist.testharness)
     androidTestImplementation(kotlin("test"))
+    debugImplementation(libs.androidx.compose.ui.testManifest)
     debugImplementation(projects.uiTestHiltManifest)
 
     implementation(libs.androidx.activity.compose)
